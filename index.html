@@ -853,6 +853,32 @@
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
 </button>
 
+
+<!-- ============================================================
+     BACKGROUND MUSIC
+     Plays from the moment a guest opens the invitation (browsers
+     only allow sound after a tap, so the OPEN OUR INVITATION
+     button starts it). The toggle sits above the back-to-top
+     button and lets anyone pause it.
+     To change the track, edit the URL in script.js.
+     ============================================================ -->
+<audio id="bg-music" loop preload="none" src="https://vkpoarcenowency-bit.github.io/index/bgmusic.mp3"></audio>
+
+<button id="music-toggle" aria-label="Pause background music" aria-pressed="true" title="Pause background music">
+  <span class="m-playing" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+      <path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/>
+    </svg>
+  </span>
+  <span class="m-muted" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+      <path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/>
+      <path d="M3 3l18 18"/>
+    </svg>
+  </span>
+  <span class="sr-only" id="music-label">Pause background music</span>
+</button>
+
 <script src="script.js"></script>
 </body>
 </html>
