@@ -35,12 +35,19 @@
 }
 
 *,*::before,*::after{box-sizing:border-box;}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden;}
 body{
   margin:0;font-family:var(--sans);font-size:16px;font-weight:400;
-  line-height:1.75;color:var(--espresso);background:var(--cream);overflow-x:hidden;
+  line-height:1.75;color:var(--espresso);background:var(--cream);
+  overflow-x:hidden;width:100%;max-width:100%;position:relative;
 }
 body.is-locked{overflow:hidden;}
+
+/* Nothing may be wider than the screen. Absolutely-positioned
+   ornaments are the usual cause of a page that looks pushed to the
+   left on a phone, because they sit outside their container and
+   stretch the whole layout. */
+section,#letter,footer,header,#intro{max-width:100%;}
 img{max-width:100%;display:block;}
 a{color:inherit;text-decoration:none;}
 button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit;}
@@ -213,7 +220,7 @@ h2.title{
 .inv-venue{font-family:var(--serif);font-size:1.4rem;color:var(--plum);margin:1.5rem 0 1.9rem;line-height:1.4;}
 .inv-venue em{display:block;font-size:1.04rem;color:var(--mauve);}
 .inv-actions{display:flex;flex-wrap:wrap;gap:.8rem;}
-.inv-photo-wrap{position:relative;}
+.inv-photo-wrap{position:relative;max-width:100%;}
 .inv-photo-wrap::before{content:"";position:absolute;inset:-14px;border:1px solid rgba(198,164,106,.55);border-radius:8px;pointer-events:none;}
 /* the glow sits outside the photo, so it is hidden on narrow screens
    where it would push the layout off-centre */
@@ -518,7 +525,9 @@ footer .f-small{font-size:.62rem;color:rgba(245,235,221,.46);letter-spacing:.12e
   .wrap{width:min(100% - 3rem, var(--wrap));}
   .inv-grid{grid-template-columns:1fr;gap:2.6rem;}
   /* photo and every one of its decorations are centred together */
-  .inv-photo-wrap{order:-1;width:100%;max-width:520px;margin-inline:auto;}
+  .inv-photo-wrap{order:-1;width:auto;max-width:min(520px,100%);margin-inline:auto;}
+  /* the glow that hangs outside the photo would widen the page here */
+  .inv-photo-wrap::after{display:none;}
   .gb-grid{grid-template-columns:1fr;}
   .chapter-inner{grid-template-columns:1fr;gap:1.8rem;}
   .chapter.flip .chapter-body{order:0;}
