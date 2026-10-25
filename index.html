@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#492B3A">
+<meta name="description" content="Isabella and Alexander are getting married — June 20, 2027, The Rosewood Estate, Tagaytay City. Open our invitation.">
+<title>Isabella &amp; Alexander · June 20, 2027</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23492B3A'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='32' fill='%23C6A46A' text-anchor='middle'%3EI%26A%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="is-locked">
+
+<div id="intro">
+  <div class="intro-bg">
+    <div class="frame" id="intro-photo">
+      <img src="public/images/hero-wedding.jpg" alt="Isabella and Alexander surrounded by their guests" data-placeholder>
+      <div class="ph">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="4.5" width="18" height="15" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M3.6 17.2l4.6-4.3 3.4 3.1 3.1-2.6 5.7 4.9"/></svg>
+        <b>Your photograph here</b><small>hero-wedding.jpg</small>
+      </div>
+    </div>
+    <div class="intro-veil"></div>
+  </div>
+
+  <div class="intro-inner">
+    <p class="eyebrow gold" data-i="1" style="margin-bottom:1.3rem">To our favorite people</p>
+    <h1 style="margin:0;font-weight:400">
+      <span class="intro-line" data-i="2">Isabella</span>
+      <span class="intro-amp" data-i="3">&amp;</span>
+      <span class="intro-line" data-i="4">Alexander</span>
+    </h1>
+    <div class="gold-rule" data-i="5"></div>
+    <p class="intro-note" data-i="5">&ldquo;Two hearts, one beautiful story, and a lifetime of memories waiting to be made.&rdquo;</p>
+    <p class="intro-when" data-i="6">June 20, 2027 &middot; Tagaytay City</p>
+    <button class="btn btn-rose" data-i="6" id="open-btn"><span>Open our invitation</span></button>
+  </div>
+
+  <button class="skip-intro" id="skip-btn">Skip intro</button>
+</div>
+
+<header id="nav">
+  <a href="#top" class="mono" aria-label="Isabella and Alexander — home">I<span>&amp;</span>A</a>
+  <nav class="navlinks" aria-label="Main">
+    <a href="#top" data-nav>Home</a>
+    <a href="#story" data-nav>Our Story</a>
+    <a href="#details" data-nav>Wedding Details</a>
+    <a href="#schedule" data-nav>Schedule</a>
+    <a href="#gallery" data-nav>Gallery</a>
+    <a href="#rsvp" data-nav>RSVP</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><i></i><i></i><i></i></button>
+</header>
+
+<div id="drawer">
+  <span class="drawer-mono">I &amp; A</span>
+  <a href="#top" style="--i:0" data-nav>Home</a>
+  <a href="#story" style="--i:1" data-nav>Our Story</a>
+  <a href="#details" style="--i:2" data-nav>Wedding Details</a>
+  <a href="#schedule" style="--i:3" data-nav>Schedule</a>
+  <a href="#gallery" style="--i:4" data-nav>Gallery</a>
+  <a href="#rsvp" style="--i:5" data-nav>RSVP</a>
+</div>
+
+<main id="top">
+
+<!-- ============================================================
+     1. THE INVITATION — warm cream, espresso text
+     ============================================================ -->
+<section id="invitation">
+  <span class="leaf leaf-a" aria-hidden="true">
+    <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2">
+      <path d="M50 96V6"/><path d="M50 34C34 30 22 22 16 8c16 0 28 8 34 22"/>
+      <path d="M50 52C32 48 20 40 14 26c16 0 28 8 36 22"/>
+      <path d="M50 46c18-4 30-12 36-26-16 0-28 8-36 22"/>
+      <path d="M50 66c18-4 30-12 36-26-16 0-28 8-36 22"/>
+    </svg>
+  </span>
+  <span class="leaf leaf-b" aria-hidden="true">
+    <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2">
+      <path d="M50 96V6"/><path d="M50 34C34 30 22 22 16 8c16 0 28 8 34 22"/>
+      <path d="M50 52C32 48 20 40 14 26c16 0 28 8 36 22"/>
+      <path d="M50 46c18-4 30-12 36-26-16 0-28 8-36 22"/>
+    </svg>
+  </span>
+
+  <div class="wrap">
+    <div class="inv-grid">
+      <div class="inv-copy">
+        <p class="eyebrow" style="color:var(--mauve)" data-reveal>Together with our families</p>
+        <p class="lede" style="max-width:44ch;margin:0 0 1.8rem" data-reveal>&ldquo;With hearts full of love and gratitude, we invite you to join us as we begin our greatest adventure yet. Your presence will make our special day even more meaningful as we celebrate love, laughter, and a lifetime of beautiful memories.&rdquo;</p>
+        <h2 class="name" data-reveal>Isabella Marie Bennett</h2>
+        <p class="and" data-reveal>and</p>
+        <h2 class="name" data-reveal>Alexander James Carter</h2>
+
+        <div class="inv-when" data-reveal>
+          <div><span>Ceremony</span><span>3:30 PM</span></div>
+          <div><span>Reception</span><span>5:30 PM</span></div>
+        </div>
+        <p class="inv-venue" data-reveal>Sunday, June 20, 2027
+          <em>The Rosewood Estate, Tagaytay City, Philippines</em>
+        </p>
+        <div class="inv-actions" data-reveal>
+          <a class="btn btn-plum" href="isabella-and-alexander.ics" download><span>Save the date</span></a>
+          <a class="btn btn-outline" href="#details"><span>See the details</span></a>
+        </div>
+      </div>
+
+      <div class="inv-photo-wrap" data-reveal="zoom">
+        <div class="frame ratio-portrait zoomable">
+          <img src="public/images/couple-portrait.jpg" alt="Isabella and Alexander in an art gallery" data-placeholder data-lightbox data-caption="You and me, always">
+          <div class="ph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="4.5" width="18" height="15" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M3.6 17.2l4.6-4.3 3.4 3.1 3.1-2.6 5.7 4.9"/></svg>
+            <b>Your photograph here</b><small>couple-portrait.jpg</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     2. COUNTDOWN — deep plum, champagne-gold numbers
+     ============================================================ -->
+<section id="countdown" class="center">
+  <div class="wrap">
+    <p class="eyebrow gold" data-reveal>Counting down to forever</p>
+    <div class="gold-rule" data-reveal></div>
+    <p class="lede cd-sub" data-reveal style="color:rgba(245,235,221,.92)">&ldquo;Every second brings us closer to the day we say I do.&rdquo;</p>
+
+    <div class="cd-grid" data-reveal>
+      <div class="cd-cell"><div class="cd-num" id="cd-days">&mdash;</div><div class="cd-label">Days</div></div>
+      <div class="cd-cell"><div class="cd-num" id="cd-hours">&mdash;</div><div class="cd-label">Hours</div></div>
+      <div class="cd-cell"><div class="cd-num" id="cd-minutes">&mdash;</div><div class="cd-label">Minutes</div></div>
+      <div class="cd-cell"><div class="cd-num" id="cd-seconds">&mdash;</div><div class="cd-label">Seconds</div></div>
+    </div>
+
+    <div id="cd-done">
+      <h2 class="title" style="font-size:clamp(1.8rem,4vw,2.8rem)">Our Forever Has Begun</h2>
+      <div class="gold-rule"></div>
+      <p class="lede">&ldquo;Our forever has begun. Thank you for being part of our story.&rdquo;</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     3. OUR LOVE STORY — alternating dusty rose and warm cream
+     ============================================================ -->
+<section id="story" class="center">
+  <div class="wrap">
+    <h2 class="title" data-reveal>Every Love Story Is Beautiful,<br>But Ours Is Our Favorite</h2>
+    <div class="gold-rule" data-reveal></div>
+    <p class="lede" data-reveal>&ldquo;Some people enter your life quietly, then become the most beautiful part of it. This is the story of two hearts that found their way home to each other.&rdquo;</p>
+  </div>
+
+  <div class="story-list">
+
+    <article class="chapter">
+      <div class="chapter-inner">
+        <div class="chapter-body" data-reveal>
+          <p class="chapter-num">Chapter One</p>
+          <h3>Our First Hello</h3>
+          <p class="chapter-date">September 14, 2021</p>
+          <p>&ldquo;It started with a simple conversation and a smile. We never imagined that an ordinary day would become the beginning of our favorite story.&rdquo;</p>
+        </div>
+        <div data-reveal="zoom">
+          <div class="frame ratio-portrait zoomable">
+            <img src="public/images/first-meeting.jpg" alt="Where it all began" data-placeholder data-lightbox data-caption="The day it all started">
+            <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="4.5" width="18" height="15" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M3.6 17.2l4.6-4.3 3.4 3.1 3.1-2.6 5.7 4.9"/></svg><b>Your photograph here</b><small>first-meeting.jpg</small></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="chapter alt flip">
+      <div class="chapter-inner">
+        <div class="chapter-body" data-reveal>
+          <p class="chapter-num">Chapter Two</p>
+          <h3>Falling in Love</h3>
+          <p class="chapter-date">December 24, 2021</p>
+          <p>&ldquo;Through late-night conversations, little adventures, shared playlists, and countless laughs, we discovered that being together felt like home.&rdquo;</p>
+        </div>
+        <div data-reveal="zoom">
+          <div class="frame ratio-portrait zoomable">
+            <img src="public/images/love-story.jpg" alt="Walking together by the water" data-placeholder data-lightbox data-caption="Falling in love">
+            <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="4.5" width="18" height="15" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M3.6 17.2l4.6-4.3 3.4 3.1 3.1-2.6 5.7 4.9"/></svg><b>Your photograph here</b><small>love-story.jpg</small></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="chapter">
+      <div class="chapter-inner">
+        <div class="chapter-body" data-reveal>
+          <p class="chapter-num">Chapter Three</p>
+          <h3>The Little Things</h3>
+          <p class="chapter-date">August 6, 2023</p>
+          <p>&ldquo;Our love grew in the quiet moments: coffee on slow mornings, spontaneous adventures, comforting hugs, and the kind of laughter that makes time disappear.&rdquo;</p>
+        </div>
+        <div data-reveal="zoom">
+          <div class="frame ratio-portrait zoomable">
+            <img src="public/images/little-moments.jpg" alt="A quiet moment in an art gallery" data-placeholder data-lightbox data-caption="The quiet in-between moments">
+            <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="4.5" width="18" height="15" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M3.6 17.2l4.6-4.3 3.4 3.1 3.1-2.6 5.7 4.9"/></svg><b>Your photograph here</b><small>little-moments.jpg</small></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="chapter alt flip">
+      <div class="chapter-inner">
+        <div class="chapter-body" data-reveal>
+          <p class="chapter-num">Chapter Four</p>
+          <h3>The Proposal</h3>
+          <p class="chapter-date">December 25, 2025</p>
+          <p>&ldquo;Under a beautiful evening sky, Alexander asked the question that would change their lives forever. Isabella said yes, and suddenly every dream about the future had a name.&rdquo;</p>
+        </div>
+        <div data-reveal="zoom">
+          <div class="frame ratio-portrait zoomable">
+            <img src="public/images/proposal.jpg" alt="Celebrating with sparklers" data-placeholder data-lightbox data-caption="She said yes">
+            <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="4.5" width="18" height="15" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M3.6 17.2l4.6-4.3 3.4 3.1 3.1-2.6 5.7 4.9"/></svg><b>Your photograph here</b><small>proposal.jpg</small></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="chapter">
+      <div class="chapter-inner">
+        <div class="chapter-body" data-reveal>
+          <p class="chapter-num">Chapter Five</p>
+          <h3>Our Forever Begins</h3>
+          <p class="chapter-date">June 20, 2027</p>
+          <p>&ldquo;Now, surrounded by the people we love most, we begin our next chapter. Not because our story is complete, but because the most beautiful parts are still ahead.&rdquo;</p>
+        </div>
+        <div data-reveal="zoom">
+          <div class="frame ratio-portrait zoomable">
+            <img src="public/images/engagement.jpg" alt="Engagement portrait in the mist" data-placeholder data-lightbox data-caption="Every dream has a name now">
+            <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="4.5" width="18" height="15" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M3.6 17.2l4.6-4.3 3.4 3.1 3.1-2.6 5.7 4.9"/></svg><b>Your photograph here</b><small>engagement.jpg</small></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     4. WEDDING DETAILS — cream with mauve and sage accents
+     ============================================================ -->
+<section id="details" class="center">
+  <div class="wrap">
+    <p class="eyebrow" style="color:var(--mauve)" data-reveal>The celebration</p>
+    <h2 class="title" data-reveal>Wedding Details</h2>
+    <div class="gold-rule" data-reveal></div>
+    <p class="lede" data-reveal>&ldquo;Two beautiful places, one unforgettable day. Here is everything you need to find us.&rdquo;</p>
+
+    <div class="card-grid" style="text-align:left">
+
+      <article class="invite-card" data-reveal>
+        <div class="frame ratio-wide">
+          <img src="public/images/wedding-ceremony.jpg" alt="The ceremony setting" data-placeholder>
+          <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="4.5" width="18" height="15" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M3.6 17.2l4.6-4.3 3.4 3.1 3.1-2.6 5.7 4.9"/></svg><b>Your photograph here</b><small>wedding-ceremony.jpg</small></div>
+        </div>
+        <div class="invite-card-body">
+          <p class="card-tag">The Ceremony</p>
+          <h3>The Rosewood Estate</h3>
+          <p class="where">18 Rose Garden Lane, Tagaytay City, Philippines</p>
+          <div class="meta">
+            <div><span>Date</span><span>Sunday, June 20, 2027</span></div>
+            <div><span>Time</span><span>3:30 PM</span></div>
+          </div>
+          <div><a class="btn btn-plum btn-block" data-map="The+Rosewood+Estate,+18+Rose+Garden+Lane,+Tagaytay+City,+Philippines"><span>View ceremony location</span></a></div>
+          <p class="card-note">Sample venue &mdash; fictional, and fully editable. This button opens a clearly labelled map <em>search</em> for the address above. Replace the address, then update the destination in the button&rsquo;s link.</p>
+        </div>
+      </article>
+
+      <article class="invite-card" data-reveal>
+        <div class="frame ratio-wide">
+          <img src="public/images/wedding-reception.jpg" alt="The reception setting" data-placeholder>
+          <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="4.5" width="18" height="15" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M3.6 17.2l4.6-4.3 3.4 3.1 3.1-2.6 5.7 4.9"/></svg><b>Your photograph here</b><small>wedding-reception.jpg</small></div>
+        </div>
+        <div class="invite-card-body">
+          <p class="card-tag">The Reception</p>
+          <h3>The Glasshouse at Rosewood</h3>
+          <p class="where">Within The Rosewood Estate</p>
+          <div class="meta">
+            <div><span>Date</span><span>Sunday, June 20, 2027</span></div>
+            <div><span>Time</span><span>5:30 PM</span></div>
+          </div>
+          <div><a class="btn btn-plum btn-block" data-map="The+Glasshouse+at+Rosewood,+Tagaytay+City,+Philippines"><span>View reception location</span></a></div>
+          <p class="card-note">Sample venue &mdash; fictional and editable. Opens a labelled map search; no destination is presented as confirmed.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     5. SCHEDULE — sage green, deep plum text, cream cards
+     ============================================================ -->
+<section id="schedule">
+  <div class="wrap center">
+    <p class="eyebrow" style="color:rgba(73,43,58,.74)" data-reveal>Sunday, June 20, 2027</p>
+    <h2 class="title" data-reveal>A Day to Remember</h2>
+    <div class="gold-rule" data-reveal></div>
+    <p class="lede" style="color:rgba(46,26,36,.88)" data-reveal>&ldquo;A little timeline of all the moments we cannot wait to share with you.&rdquo;</p>
+
+    <div class="sched-list" style="text-align:left">
+
+      <div class="sched-item" data-reveal>
+        <span class="sched-dot"></span>
+        <div class="sched-card">
+          <span class="sched-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+          <span class="sched-time">3:00 PM</span>
+          <span><span class="sched-what">Guest Arrival</span><span class="sched-note">Settle in, sign the guestbook, and find your seat in the garden.</span></span>
+        </div>
+      </div>
+
+      <div class="sched-item" data-reveal>
+        <span class="sched-dot"></span>
+        <div class="sched-card">
+          <span class="sched-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 21c-4.4 0-8-2.9-8-6.5C4 9.6 8.5 4 12 3c3.5 1 8 6.6 8 11.5 0 3.6-3.6 6.5-8 6.5z"/><circle cx="12" cy="12" r="2.4"/></svg></span>
+          <span class="sched-time">3:30 PM</span>
+          <span><span class="sched-what">Wedding Ceremony</span><span class="sched-note">Vows beneath the rose arbor.</span></span>
+        </div>
+      </div>
+
+      <div class="sched-item" data-reveal>
+        <span class="sched-dot"></span>
+        <div class="sched-card">
+          <span class="sched-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="6.5" width="18" height="13" rx="2"/><circle cx="12" cy="13" r="3.4"/><path d="M8 6.5l1.4-2h5.2L16 6.5"/></svg></span>
+          <span class="sched-time">4:30 PM</span>
+          <span><span class="sched-what">Couple Photos &amp; Congratulations</span><span class="sched-note">Golden-hour portraits in the garden.</span></span>
+        </div>
+      </div>
+
+      <div class="sched-item" data-reveal>
+        <span class="sched-dot"></span>
+        <div class="sched-card">
+          <span class="sched-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M6 3.5h12l-1.2 7.6A5 5 0 0 1 12 15.4a5 5 0 0 1-4.8-4.3z"/><path d="M12 15.4V21M8.5 21h7"/></svg></span>
+          <span class="sched-time">5:30 PM</span>
+          <span><span class="sched-what">Cocktail Hour</span><span class="sched-note">Signature drinks on the terrace.</span></span>
+        </div>
+      </div>
+
+      <div class="sched-item" data-reveal>
+        <span class="sched-dot"></span>
+        <div class="sched-card">
+          <span class="sched-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 4v7a8 8 0 0 0 16 0V4"/><path d="M12 19v3M8.5 22h7M4 7h16"/></svg></span>
+          <span class="sched-time">6:30 PM</span>
+          <span><span class="sched-what">Dinner Reception</span><span class="sched-note">Inside The Glasshouse at Rosewood.</span></span>
+        </div>
+      </div>
+
+      <div class="sched-item" data-reveal>
+        <span class="sched-dot"></span>
+        <div class="sched-card">
+          <span class="sched-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 9h16M6 9V5.5h12V9M6 13.5h12M6 17.5h8"/></svg></span>
+          <span class="sched-time">7:15 PM</span>
+          <span><span class="sched-what">Speeches &amp; Toasts</span><span class="sched-note">A few words from the people we love.</span></span>
+        </div>
+      </div>
+
+      <div class="sched-item" data-reveal>
+        <span class="sched-dot"></span>
+        <div class="sched-card">
+          <span class="sched-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 20s-6-4-6-8.4A3.6 3.6 0 0 1 12 8.6a3.6 3.6 0 0 1 6 3c0 4.4-6 8.4-6 8.4z"/></svg></span>
+          <span class="sched-time">7:45 PM</span>
+          <span><span class="sched-what">First Dance</span><span class="sched-note">To the song that has always been ours.</span></span>
+        </div>
+      </div>
+
+      <div class="sched-item" data-reveal>
+        <span class="sched-dot"></span>
+        <div class="sched-card">
+          <span class="sched-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M8 21h8M12 21v-6"/><path d="M12 15c4 0 6-2.5 6-5H6c0 2.5 2 5 6 5z"/><path d="M6 10c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg></span>
+          <span class="sched-time">8:00 PM</span>
+          <span><span class="sched-what">Cake Cutting</span><span class="sched-note">Something sweet, and a sweet little tradition.</span></span>
+        </div>
+      </div>
+
+      <div class="sched-item" data-reveal>
+        <span class="sched-dot"></span>
+        <div class="sched-card">
+          <span class="sched-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="8" cy="8" r="2.4"/><circle cx="16" cy="8" r="2.4"/><path d="M3.5 20c0-2.8 2-4.8 4.5-4.8s4.5 2 4.5 4.8M11.5 20c0-2.8 2-4.8 4.5-4.8s4.5 2 4.5 4.8"/></svg></span>
+          <span class="sched-time">8:15 PM</span>
+          <span><span class="sched-what">Dancing &amp; Celebration</span><span class="sched-note">The floor is yours &mdash; request a song with your RSVP.</span></span>
+        </div>
+      </div>
+
+      <div class="sched-item" data-reveal>
+        <span class="sched-dot"></span>
+        <div class="sched-card">
+          <span class="sched-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/><path d="M18 4.5l.6 1.4 1.4.6-1.4.6-.6 1.4-.6-1.4-1.4-.6 1.4-.6z"/></svg></span>
+          <span class="sched-time">9:30 PM</span>
+          <span><span class="sched-what">Evening Farewell</span><span class="sched-note">Sparklers, hugs, and the last dance of the night.</span></span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     6. GALLERY — warm cream with dusty-rose details
+     ============================================================ -->
+<section id="gallery" class="center">
+  <div class="wrap">
+    <p class="eyebrow" style="color:var(--rose)" data-reveal>Our gallery</p>
+    <h2 class="title" data-reveal>Little Moments,<br>A Lifetime of Love</h2>
+    <div class="gold-rule" data-reveal></div>
+    <p class="lede" data-reveal>&ldquo;A collection of the moments, places, and feelings that brought us here.&rdquo;</p>
+  </div>
+
+  <div class="wrap">
+    <div class="gal-grid" id="gal-grid">
+
+      <figure class="gal-item tall" data-reveal>
+        <div class="frame zoomable">
+          <img src="public/images/gallery-1.jpg" alt="Bridesmaids gathered together" data-placeholder data-gallery data-caption="Our favourite people, all in one place">
+          <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="4.5" width="18" height="15" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M3.6 17.2l4.6-4.3 3.4 3.1 3.1-2.6 5.7 4.9"/></svg><b>Your photograph here</b><small>gallery-1.jpg</small></div>
+        </div>
+        <figcaption class="gal-cap">Our favourite people, all in one place</figcaption>
+      </figure>
+
+      <figure class="gal-item" data-reveal>
+        <div class="frame zoomable">
+          <img src="public/images/gallery-2.jpg" alt="Celebration with loved ones" data-placeholder data-gallery data-caption="Surrounded by everyone we love">
+          <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="4.5" width="18" height="15" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M3.6 17.2l4.6-4.3 3.4 3.1 3.1-2.6 5.7 4.9"/></svg><b>Your photograph here</b><small>gallery-2.jpg</small></div>
+        </div>
+        <figcaption class="gal-cap">Surrounded by everyone we love</figcaption>
+      </figure>
+
+      <figure class="gal-item" data-reveal>
+        <div class="frame zoomable">
+          <img src="public/images/gallery-3.jpg" alt="Bride at the doorway" data-placeholder data-gallery data-caption="The dress, and the moment before">
+          <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="4.5" width="18" height="15" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M3.6 17.2l4.6-4.3 3.4 3.1 3.1-2.6 5.7 4.9"/></svg><b>Your photograph here</b><small>gallery-3.jpg</small></div>
+        </div>
+        <figcaption class="gal-cap">The dress, and the moment before</figcaption>
+      </figure>
+
+      <figure class="gal-item wide" data-reveal>
+        <div class="frame zoomable">
+          <img src="public/images/wedding-reception.jpg" alt="Walking together through the mist" data-placeholder data-gallery data-caption="Walking into our forever">
+          <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="4.5" width="18" height="15" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M3.6 17.2l4.6-4.3 3.4 3.1 3.1-2.6 5.7 4.9"/></svg><b>Your photograph here</b><small>wedding-reception.jpg</small></div>
+        </div>
+        <figcaption class="gal-cap">Walking into our forever</figcaption>
+      </figure>
+
+      <figure class="gal-item" data-reveal>
+        <div class="frame zoomable">
+          <img src="public/images/first-meeting.jpg" alt="Beach portrait at golden hour" data-placeholder data-gallery data-caption="Golden hour, and nowhere else to be">
+          <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="4.5" width="18" height="15" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M3.6 17.2l4.6-4.3 3.4 3.1 3.1-2.6 5.7 4.9"/></svg><b>Your photograph here</b><small>first-meeting.jpg</small></div>
+        </div>
+        <figcaption class="gal-cap">Golden hour, and nowhere else to be</figcaption>
+      </figure>
+
+      <figure class="gal-item tall" data-reveal>
+        <div class="frame zoomable">
+          <img src="public/images/gallery-4.jpg" alt="Celebration with sparklers" data-placeholder data-gallery data-caption="Sparklers, laughter, and the last dance">
+          <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="4.5" width="18" height="15" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M3.6 17.2l4.6-4.3 3.4 3.1 3.1-2.6 5.7 4.9"/></svg><b>Your photograph here</b><small>gallery-4.jpg</small></div>
+        </div>
+        <figcaption class="gal-cap">Sparklers, laughter, and the last dance</figcaption>
+      </figure>
+
+      <figure class="gal-item" data-reveal>
+        <div class="frame zoomable">
+          <img src="public/images/love-story.jpg" alt="Holding hands by the water" data-placeholder data-gallery data-caption="Holding on, and never letting go">
+          <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="4.5" width="18" height="15" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M3.6 17.2l4.6-4.3 3.4 3.1 3.1-2.6 5.7 4.9"/></svg><b>Your photograph here</b><small>love-story.jpg</small></div>
+        </div>
+        <figcaption class="gal-cap">Holding on, and never letting go</figcaption>
+      </figure>
+
+      <figure class="gal-item" data-reveal>
+        <div class="frame zoomable">
+          <img src="public/images/proposal.jpg" alt="Sparkler send-off" data-placeholder data-gallery data-caption="The night we laughed until we cried">
+          <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="4.5" width="18" height="15" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M3.6 17.2l4.6-4.3 3.4 3.1 3.1-2.6 5.7 4.9"/></svg><b>Your photograph here</b><small>proposal.jpg</small></div>
+        </div>
+        <figcaption class="gal-cap">The night we laughed until we cried</figcaption>
+      </figure>
+
+    </div>
+  </div>
+</section>
+
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lb-btn" id="lb-close" aria-label="Close photo viewer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <button class="lb-btn" id="lb-prev" aria-label="Previous photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <button class="lb-btn" id="lb-next" aria-label="Next photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 5l7 7-7 7"/></svg></button>
+  <figure>
+    <img id="lb-img" src="" alt="">
+    <figcaption id="lb-cap"></figcaption>
+  </figure>
+</div>
+
+<!-- ============================================================
+     7. DRESS CODE — muted sage with cream text
+     ============================================================ -->
+<section id="dress">
+  <div class="wrap">
+    <div class="dress-grid">
+      <div>
+        <p class="eyebrow" style="color:var(--gold-soft)" data-reveal>Dress code</p>
+        <h2 class="title" data-reveal>Dressed for a Beautiful Day</h2>
+        <p class="lede" style="color:rgba(245,235,221,.95);margin-inline:0" data-reveal>&ldquo;We invite you to wear your most elegant attire in soft, romantic colors that complement the beauty of our celebration.&rdquo;</p>
+
+        <ul class="dress-rules" data-reveal>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20 6.5L9.5 17 4 11.6"/></svg><span>Elegant dresses, flowing silhouettes, and refined suits are welcome.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20 6.5L9.5 17 4 11.6"/></svg><span>Comfortable formal footwear is recommended for the garden ceremony.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20 6.5L9.5 17 4 11.6"/></svg><span>Kindly avoid white, ivory, and bridal-inspired shades reserved for the bride.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20 6.5L9.5 17 4 11.6"/></svg><span>Choose breathable fabrics suitable for a garden celebration.</span></li>
+        </ul>
+      </div>
+
+      <div class="dress-card" data-reveal>
+        <p class="dc-label">The dress code</p>
+        <p class="dc-title">Formal Garden Elegance</p>
+        <p>A palette of soft, romantic colors that will look beautiful among the roses.</p>
+
+        <div class="palette">
+          <div class="swatch"><i style="background:#E6D3AE"></i><span>Champagne</span></div>
+          <div class="swatch"><i style="background:#D6A0A8"></i><span>Dusty rose</span></div>
+          <div class="swatch"><i style="background:#9AA88C"></i><span>Sage green</span></div>
+          <div class="swatch"><i style="background:#A9809A"></i><span>Soft mauve</span></div>
+          <div class="swatch"><i style="background:#BCA99A"></i><span>Muted taupe</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     8. ENTOURAGE — soft blush with plum typography
+     ============================================================ -->
+<section id="entourage" class="center">
+  <div class="wrap">
+    <p class="eyebrow" style="color:var(--rose)" data-reveal>With love and gratitude</p>
+    <h2 class="title" data-reveal>Our People, Our Hearts</h2>
+    <div class="gold-rule" data-reveal></div>
+    <p class="lede" data-reveal>&ldquo;The people who have loved us, supported us, and helped make our story what it is.&rdquo;</p>
+
+    <div class="ent-grid" style="text-align:left">
+      <div class="ent-card" data-reveal><p class="ent-role">Parents of the Bride</p><p class="ent-names">Mr. and Mrs. Michael Bennett</p></div>
+      <div class="ent-card" data-reveal><p class="ent-role">Parents of the Groom</p><p class="ent-names">Mr. and Mrs. William Carter</p></div>
+      <div class="ent-card" data-reveal><p class="ent-role">Maid of Honor</p><p class="ent-names">Olivia Bennett</p></div>
+      <div class="ent-card" data-reveal><p class="ent-role">Best Man</p><p class="ent-names">Ethan Carter</p></div>
+      <div class="ent-card" data-reveal><p class="ent-role">Bridesmaids</p><p class="ent-names">Charlotte Hayes<br>Sophia Mitchell<br>Grace Anderson</p></div>
+      <div class="ent-card" data-reveal><p class="ent-role">Groomsmen</p><p class="ent-names">Noah Williams<br>Liam Brooks<br>Daniel Foster</p></div>
+      <div class="ent-card" data-reveal><p class="ent-role">Officiant</p><p class="ent-names">Reverend Samuel James</p></div>
+      <div class="ent-card" data-reveal style="display:grid;align-content:center">
+        <p class="ent-role" style="border:0;padding:0;margin:0 0 .6rem">And everyone else</p>
+        <p class="ent-names ent-sub">Our families, our friends, and every person who helped make us who we are.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     9. RSVP — deep plum with cream text and dusty-rose buttons
+     ============================================================ -->
+<section id="rsvp" class="center">
+  <div class="wrap rsvp-wrap">
+    <p class="eyebrow gold" data-reveal>R S V P</p>
+    <h2 class="title" data-reveal>Will You Be There?</h2>
+    <div class="gold-rule" data-reveal></div>
+    <p class="lede" data-reveal style="color:rgba(245,235,221,.94)">&ldquo;Our hearts would be even fuller with you by our side. Kindly let us know if you can join us as we celebrate the beginning of our forever.&rdquo;</p>
+    <p class="rsvp-deadline" data-reveal>Kindly reply by May 20, 2027</p>
+
+    <form id="rsvp-form" novalidate>
+      <div class="f-row">
+        <div class="field">
+          <label for="r-name">Full name</label>
+          <input id="r-name" name="name" type="text" placeholder="Your full name" autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="r-email">Email address</label>
+          <input id="r-email" name="email" type="email" placeholder="you@example.com" autocomplete="email">
+        </div>
+      </div>
+
+      <div class="field">
+        <span class="grp-label">Will you be joining us?</span>
+        <div class="radios" id="r-attend">
+          <label class="on"><input type="radio" name="attending" value="Joyfully accepts" checked><span>Joyfully accepts</span></label>
+          <label><input type="radio" name="attending" value="Regretfully declines"><span>Regretfully declines</span></label>
+        </div>
+      </div>
+
+      <div class="f-row">
+        <div class="field">
+          <label for="r-guests">Number of guests in your party</label>
+          <select id="r-guests" name="guests">
+            <option>1 &mdash; just me</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 or more</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="r-names">Names of accompanying guests</label>
+          <input id="r-names" name="guestNames" type="text" placeholder="Full names, separated by commas">
+        </div>
+      </div>
+
+      <div class="f-row">
+        <div class="field">
+          <label for="r-meal">Meal preference</label>
+          <select id="r-meal" name="meal">
+            <option>Chicken</option>
+            <option>Beef</option>
+            <option>Fish &amp; seafood</option>
+            <option>Vegetarian</option>
+            <option>Vegan</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="r-diet">Dietary restrictions or allergies</label>
+          <input id="r-diet" name="diet" type="text" placeholder="Optional">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="r-song">A song you&rsquo;d love to dance to</label>
+        <input id="r-song" name="song" type="text" placeholder="Song title and artist">
+      </div>
+
+      <div class="field">
+        <label for="r-message">A short message for the couple</label>
+        <textarea id="r-message" name="message" placeholder="Write us a little something&hellip;"></textarea>
+      </div>
+
+      <p class="hint" id="rsvp-hint"></p>
+      <button class="btn btn-rose btn-block" type="submit"><span>Send my RSVP</span></button>
+
+      <p class="form-note"><strong>Please note</strong>This is a demonstration form. Nothing is sent and nothing is stored &mdash; no details leave your browser. Connect it to your own form service (or an RSVP tool) before sharing the site with guests.</p>
+    </form>
+
+    <div class="success" id="rsvp-success" tabindex="-1">
+      <div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6.5L9.5 17 4 11.6"/></svg></div>
+      <h3 id="rsvp-head">You&rsquo;ve made our hearts happy</h3>
+      <p id="rsvp-text">&ldquo;Thank you for being part of our story. We cannot wait to celebrate this beautiful day with you.&rdquo;</p>
+      <p style="margin-top:1.6rem"><button class="btn btn-cream" id="rsvp-again"><span>Send another reply</span></button></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     10. FAQ
+     ============================================================ -->
+<section id="faq" class="center">
+  <div class="wrap">
+    <p class="eyebrow" style="color:var(--mauve)" data-reveal>Good to know</p>
+    <h2 class="title" data-reveal>A Few Helpful Details</h2>
+    <div class="gold-rule" data-reveal></div>
+
+    <div class="faq-list" style="text-align:left">
+      <div class="faq-item" data-reveal>
+        <button class="faq-q" aria-expanded="false"><span>What time should we arrive?</span><span class="faq-ico"></span></button>
+        <div class="faq-a"><p>&ldquo;We recommend arriving by 3:00 PM so you have time to settle in before the ceremony begins at 3:30 PM.&rdquo;</p></div>
+      </div>
+      <div class="faq-item" data-reveal>
+        <button class="faq-q" aria-expanded="false"><span>What should we wear?</span><span class="faq-ico"></span></button>
+        <div class="faq-a"><p>&ldquo;Our dress code is Formal Garden Elegance. We recommend elegant attire in soft, romantic colors.&rdquo;</p></div>
+      </div>
+      <div class="faq-item" data-reveal>
+        <button class="faq-q" aria-expanded="false"><span>Can I bring a plus-one?</span><span class="faq-ico"></span></button>
+        <div class="faq-a"><p>&ldquo;Please refer to your invitation for the number of guests reserved for your party.&rdquo;</p></div>
+      </div>
+      <div class="faq-item" data-reveal>
+        <button class="faq-q" aria-expanded="false"><span>Are children welcome?</span><span class="faq-ico"></span></button>
+        <div class="faq-a"><p>&ldquo;Kindly follow the guest names listed on your invitation. If you have questions about your family&rsquo;s arrangements, please contact us.&rdquo;</p></div>
+      </div>
+      <div class="faq-item" data-reveal>
+        <button class="faq-q" aria-expanded="false"><span>Is parking available?</span><span class="faq-ico"></span></button>
+        <div class="faq-a"><p>&ldquo;Parking information will be shared with confirmed guests before the wedding.&rdquo;</p></div>
+      </div>
+      <div class="faq-item" data-reveal>
+        <button class="faq-q" aria-expanded="false"><span>Can I share dietary restrictions?</span><span class="faq-ico"></span></button>
+        <div class="faq-a"><p>&ldquo;Yes, please. Include any dietary restrictions or allergies in the RSVP form and we will take care of the rest.&rdquo;</p></div>
+      </div>
+      <div class="faq-item" data-reveal>
+        <button class="faq-q" aria-expanded="false"><span>Is there a gift registry?</span><span class="faq-ico"></span></button>
+        <div class="faq-a"><p>&ldquo;Your presence is the greatest gift we could ask for. Optional registry details may be shared with our invited guests.&rdquo;</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     11. TRAVEL & ACCOMMODATION
+     ============================================================ -->
+<section id="travel" class="center">
+  <div class="wrap">
+    <p class="eyebrow" style="color:var(--sage-deep)" data-reveal>Travel &amp; accommodation</p>
+    <h2 class="title" data-reveal>Making Your Way to Us</h2>
+    <div class="gold-rule" data-reveal></div>
+    <p class="lede" data-reveal>&ldquo;For everyone traveling to celebrate with us, we want the journey to feel as easy and comfortable as possible.&rdquo;</p>
+
+    <div class="travel-grid" style="text-align:left">
+
+      <article class="travel-card" data-reveal>
+        <span class="tc-tag">Getting there</span>
+        <h3>The Rosewood Estate</h3>
+        <p class="tc-strong">18 Rose Garden Lane, Tagaytay City, Philippines</p>
+        <ul class="tc-list">
+          <li><span>Recommended arrival</span><span>By 3:00 PM</span></li>
+          <li><span>Ceremony</span><span>3:30 PM</span></li>
+          <li><span>From Manila</span><span>Roughly 2 hours by car</span></li>
+        </ul>
+        <p>We recommend leaving a little extra time on Sunday afternoons &mdash; the drive up to Tagaytay is beautiful, and busy.</p>
+        <a class="btn btn-plum btn-block" data-map="The+Rosewood+Estate,+18+Rose+Garden+Lane,+Tagaytay+City,+Philippines"><span>Get directions</span></a>
+        <div class="editable"><b>Editable</b>Swap the address above for your real venue, then update the destination inside the Get directions button. This opens a labelled map search, not a confirmed pin.</div>
+      </article>
+
+      <article class="travel-card" data-reveal>
+        <span class="tc-tag">Accommodation</span>
+        <h3>Where to stay</h3>
+        <p>Two sample hotels near the venue. Replace them with your own recommended stays and booking links.</p>
+        <ul class="tc-list">
+          <li><span>Sample Hotel One</span><span>10 minutes away</span></li>
+          <li><span>Sample Hotel Two</span><span>20 minutes away</span></li>
+          <li><span>Room block</span><span>To be confirmed</span></li>
+        </ul>
+        <div class="editable"><b>Editable fields</b>Hotel name &middot; address &middot; estimated price &middot; distance from the venue &middot; booking link. No real hotels, prices, or booking links are included in this template.</div>
+      </article>
+
+      <article class="travel-card" data-reveal>
+        <span class="tc-tag">Transportation</span>
+        <h3>Getting around</h3>
+        <p>Everything you need to arrive relaxed and on time.</p>
+        <ul class="tc-list">
+          <li><span>Parking</span><span>On-site, free</span></li>
+          <li><span>Shuttle pickup</span><span>Details to follow</span></li>
+          <li><span>Return shuttle</span><span>After the farewell</span></li>
+        </ul>
+        <div class="editable"><b>Editable</b>Parking notes, pickup points, and shuttle times. The placeholder wording is deliberate &mdash; no arrangements are confirmed in this template.</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     12. GUESTBOOK — deep mauve with cream text
+     ============================================================ -->
+<section id="guestbook">
+  <div class="wrap">
+    <div class="gb-grid">
+      <div data-reveal>
+        <p class="eyebrow gold">Guestbook</p>
+        <h2 class="title" style="color:var(--cream)">Leave a Little Love</h2>
+        <p class="lede" style="color:rgba(245,235,221,.94);margin-inline:0">&ldquo;Before you go, leave us a note, a wish, or a little advice for our forever. These are the words we will return to long after the flowers have faded.&rdquo;</p>
+
+        <form id="gb-form" novalidate style="margin-top:1.8rem">
+          <div class="field">
+            <label for="g-name">Your name</label>
+            <input id="g-name" name="name" type="text" placeholder="Your name">
+          </div>
+          <div class="field">
+            <label for="g-msg">Your message for the couple</label>
+            <textarea id="g-msg" name="message" placeholder="A wish, a memory, or a little advice&hellip;"></textarea>
+          </div>
+          <p class="hint" id="gb-hint"></p>
+          <button class="btn btn-rose btn-block" type="submit"><span>Leave your love note</span></button>
+          <p class="form-note"><strong>Please note</strong>Demonstration only &mdash; notes are not saved anywhere. Connect this to your own service if you would like to keep them.</p>
+        </form>
+
+        <div class="success" id="gb-success">
+          <div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6.5L9.5 17 4 11.6"/></svg></div>
+          <h3 style="font-size:1.5rem">Thank you, from both of us</h3>
+          <p>&ldquo;Your words are already part of our story. We will keep them close.&rdquo;</p>
+        </div>
+      </div>
+
+      <div data-reveal>
+        <p class="eyebrow" style="color:rgba(245,235,221,.82)">Notes from the guestbook</p>
+        <div class="gb-notes">
+          <blockquote class="gb-note">&ldquo;May your love keep growing in the small, ordinary days &mdash; that is where the best of it lives.&rdquo;<cite>Sample note</cite></blockquote>
+          <blockquote class="gb-note">&ldquo;Wishing you a lifetime of slow mornings, long drives, and laughing until it hurts.&rdquo;<cite>Sample note</cite></blockquote>
+          <blockquote class="gb-note">&ldquo;Thank you for showing us what love looks like when it is patient and kind.&rdquo;<cite>Sample note</cite></blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     13. FINAL LOVE LETTER — sunset photograph with a plum overlay
+     ============================================================ -->
+<section id="letter">
+  <div class="bg">
+    <div class="frame" id="letter-photo">
+      <img src="public/images/final-moment.jpg" alt="A moment together at sunset" data-placeholder>
+      <div class="ph">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="4.5" width="18" height="15" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M3.6 17.2l4.6-4.3 3.4 3.1 3.1-2.6 5.7 4.9"/></svg>
+        <b>Your photograph here</b><small>final-moment.jpg</small>
+      </div>
+    </div>
+  </div>
+  <div class="letter-veil"></div>
+
+  <div class="wrap letter-inner">
+    <p class="eyebrow gold" data-reveal>A final love letter</p>
+    <h2 class="title" style="color:var(--cream)" data-reveal>And So, Our Forever Begins</h2>
+    <div class="gold-rule" data-reveal></div>
+
+    <div class="letter-body" data-reveal>
+      <p>&ldquo;We have dreamed of this day, imagined this moment, and counted down to the second we get to stand together and promise each other a lifetime.</p>
+      <p>Thank you for being part of our story. We cannot wait to celebrate with you and create beautiful memories together.&rdquo;</p>
+    </div>
+
+    <p style="font-family:var(--serif);font-style:italic;color:rgba(245,235,221,.9);margin:1.6rem 0 .2rem" data-reveal>With all our love,</p>
+    <p class="letter-sign" data-reveal>Isabella &amp; Alexander</p>
+    <p class="letter-date" data-reveal>June 20, 2027 &middot; Tagaytay City</p>
+
+    <p style="margin-top:2.6rem" data-reveal><button class="btn btn-rose" id="back-top"><span>Back to the beginning</span></button></p>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER — deep plum with cream text and gold details
+     ============================================================ -->
+<footer id="footer">
+  <div class="wrap">
+    <p class="mono">I &amp; A</p>
+    <p class="f-couple">Isabella &amp; Alexander</p>
+    <p class="f-meta">June 20, 2027 &nbsp;&middot;&nbsp; Tagaytay City, Philippines</p>
+    <p class="f-tag">#IsabellaAndAlexander2027</p>
+
+    <nav aria-label="Footer">
+      <a href="#top">Home</a>
+      <a href="#story">Our Story</a>
+      <a href="#details">Wedding Details</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#rsvp">RSVP</a>
+      <a href="#faq">FAQ</a>
+      <a href="#guestbook">Guestbook</a>
+    </nav>
+
+    <p class="f-quote">&ldquo;Made with love, for a love that lasts forever.&rdquo;</p>
+    <p class="f-small">Sample wedding website template &middot; Demonstration forms are not connected &middot; All names, venues, and details are fictional</p>
+  </div>
+</footer>
+
+<button id="totop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
+
