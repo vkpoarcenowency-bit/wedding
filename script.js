@@ -14,7 +14,85 @@ const WEDDING = {
   venue: 'The Rosewood Estate'
 };
 
-/* ---------- 1. opening screen ---------- */
+/* ---------- 1. background music ----------
+   Browsers block sound until the guest interacts with the page, so
+   the track starts on the OPEN OUR INVITATION button (or the skip
+   link) and fades in gently. The floating toggle pauses it.
+   Change the track by editing MUSIC.src below. */
+const MUSIC = {
+  src: 'https://vkpoarcenowency-bit.github.io/index/bgmusic.mp3',
+  volume: 0.4
+};
+
+const bgMusic = (function initMusic(){
+  const audio = document.getElementById('bg-music');
+  const toggle = document.getElementById('music-toggle');
+  const label = document.getElementById('music-label');
+  if (!audio || !toggle) return null;
+
+  audio.src = MUSIC.src;
+  audio.loop = true;
+  audio.volume = 0;
+
+  let playing = false;
+  let fade = null;
+
+  function fadeTo(target, done){
+    window.clearInterval(fade);
+    const step = (target - audio.volume) / 24;
+    fade = window.setInterval(function(){
+      let next = audio.volume + step;
+      if ((step > 0 && next >= target) || (step < 0 && next <= target)){
+        next = target;
+        window.clearInterval(fade);
+        if (done) done();
+      }
+      audio.volume = Math.max(0, Math.min(1, next));
+    }, 40);
+  }
+
+  function setState(on){
+    playing = on;
+    toggle.classList.toggle('is-muted', !on);
+    toggle.setAttribute('aria-pressed', String(on));
+    toggle.setAttribute('aria-label', on ? 'Pause background music' : 'Play background music');
+    toggle.setAttribute('title', on ? 'Pause background music' : 'Play background music');
+    if (label) label.textContent = on ? 'Pause background music' : 'Play background music';
+  }
+
+  function start(){
+    const attempt = audio.play();
+    if (attempt && typeof attempt.then === 'function'){
+      attempt.then(function(){
+        setState(true);
+        fadeTo(MUSIC.volume);
+      }).catch(function(){
+        // the browser refused or the file could not load — stay silent
+        setState(false);
+        toggle.classList.add('is-unavailable');
+      });
+    } else {
+      setState(true);
+      fadeTo(MUSIC.volume);
+    }
+  }
+
+  toggle.addEventListener('click', function(){
+    if (playing){
+      fadeTo(0, function(){ audio.pause(); });
+      setState(false);
+    } else {
+      start();
+    }
+  });
+
+  // keep the button honest if playback stops for any other reason
+  audio.addEventListener('pause', function(){ if (playing) setState(false); });
+
+  return { start: start };
+})();
+
+/* ---------- 2. opening screen ---------- */
 (function initIntro(){
   const intro = document.getElementById('intro');
   let gone = false;
@@ -22,6 +100,7 @@ const WEDDING = {
   function dismiss(){
     if (gone) return;
     gone = true;
+    if (bgMusic) bgMusic.start();
     intro.classList.add('is-leaving');
     document.body.classList.remove('is-locked');
     window.setTimeout(function(){ intro.style.display = 'none'; }, 1000);
