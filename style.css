@@ -6,6 +6,25 @@
      2. PHOTOS -> drop your own files into public/images/ using
         the same filenames. Nothing else needs changing.
      3. WORDS  -> the text in index.html.
+   ------------------------------------------------------------
+   MOBILE CENTRING — what was fixed in this version:
+     a. .inv-photo-wrap::before sat at inset:-14px, i.e. 28px
+        wider than the photo on a screen where the wrapper is
+        capped at 520px. It is now inset:10px (inside the photo).
+     b. .inv-photo-wrap::after (the rose glow) hangs outside the
+        photo, so it now only appears at 1000px and above.
+     c. .leaf-b stuck 38px off the right edge of a full-bleed
+        section, widening the whole page. It is now inside the
+        section, with a smaller scaled-down size on phones.
+     d. .chapter-inner was reset to width:100% at 900px, which
+        deleted the page gutters on full-bleed chapter bands and
+        made the story text read edge-to-edge while everything
+        else stayed centred. It now keeps matching gutters at
+        every breakpoint.
+     e. .sched-card centring at 660px did not reach the text box
+        inside span:last-child, so the note line hung left.
+     f. html/body clip horizontally so no ornament can ever
+        widen the layout viewport again.
    ============================================================ */
 
 :root{
@@ -41,14 +60,19 @@ body{
   line-height:1.75;color:var(--espresso);background:var(--cream);
   overflow-x:hidden;width:100%;max-width:100%;position:relative;
 }
+/* clip is the stronger form of hidden: it stops any ornament that
+   sits outside its section from widening the layout viewport. */
+@supports (overflow:clip){
+  html,body{overflow-x:clip;}
+}
 body.is-locked{overflow:hidden;}
 
 /* Nothing may be wider than the screen. Absolutely-positioned
    ornaments are the usual cause of a page that looks pushed to the
    left on a phone, because they sit outside their container and
    stretch the whole layout. */
-section,#letter,footer,header,#intro{max-width:100%;}
-img{max-width:100%;display:block;}
+section,#letter,footer,header,#intro,main{max-width:100%;}
+img,svg,video,iframe{max-width:100%;}
 a{color:inherit;text-decoration:none;}
 button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit;}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
@@ -209,7 +233,8 @@ h2.title{
 .leaf{position:absolute;color:var(--sage);opacity:.4;pointer-events:none;}
 .leaf svg{width:100%;height:100%;}
 .leaf-a{width:158px;height:158px;top:2.5%;left:-28px;transform:rotate(-12deg);}
-.leaf-b{width:198px;height:198px;bottom:4%;right:-38px;transform:rotate(155deg);}
+/* was right:-38px — 38px of overflow nothing clips */
+.leaf-b{width:198px;height:198px;bottom:4%;right:0;transform:rotate(155deg);}
 .inv-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4.6rem);align-items:center;}
 .inv-copy .name{font-family:var(--script);font-size:clamp(2.2rem,4.3vw,3.35rem);color:var(--plum);line-height:1.12;margin:.2rem 0;}
 .inv-copy .and{font-family:var(--serif);font-style:italic;font-size:1.22rem;color:var(--mauve);margin:.3rem 0;}
@@ -221,10 +246,12 @@ h2.title{
 .inv-venue em{display:block;font-size:1.04rem;color:var(--mauve);}
 .inv-actions{display:flex;flex-wrap:wrap;gap:.8rem;}
 .inv-photo-wrap{position:relative;max-width:100%;}
-.inv-photo-wrap::before{content:"";position:absolute;inset:-14px;border:1px solid rgba(198,164,106,.55);border-radius:8px;pointer-events:none;}
-/* the glow sits outside the photo, so it is hidden on narrow screens
+/* was inset:-14px, i.e. 28px wider than the photo. Kept inside the
+   photo's own box so it can never widen a narrow screen. */
+.inv-photo-wrap::before{content:"";position:absolute;inset:10px;border:1px solid rgba(198,164,106,.55);border-radius:8px;pointer-events:none;}
+/* the glow hangs outside the photo, so it is hidden on narrow screens
    where it would push the layout off-centre */
-.inv-photo-wrap::after{content:"";position:absolute;inset:-30px -30px auto auto;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,rgba(199,125,135,.35),transparent 68%);pointer-events:none;}
+.inv-photo-wrap::after{content:"";position:absolute;inset:-30px -30px auto auto;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle, rgba(199,125,135,.35), transparent 68%);pointer-events:none;}
 
 /* ============================================================
    COUNTDOWN
@@ -249,7 +276,9 @@ h2.title{
 .chapter{position:relative;padding:clamp(2.4rem,5vw,3.8rem) 0;background:var(--cream);}
 .chapter.alt{background:var(--blush);}
 /* the inner wrapper carries the page gutters, so the rose/cream bands
-   reach the screen edges and the content inside stays centred */
+   reach the screen edges and the content inside stays centred.
+   NOTE: this width must never be reset to 100% at any breakpoint —
+   doing so makes the story text read edge-to-edge on a phone. */
 .chapter-inner{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.6rem,5vw,4rem);align-items:center;width:min(100% - 3.4rem,var(--wrap));margin-inline:auto;}
 .chapter-num{font-family:var(--serif);font-size:.9rem;letter-spacing:.34em;color:var(--mauve);text-transform:uppercase;}
 .chapter.alt .chapter-num{color:var(--rose);}
@@ -524,9 +553,14 @@ footer .f-small{font-size:.62rem;color:rgba(245,235,221,.46);letter-spacing:.12e
 @media (max-width:1000px){
   .wrap{width:min(100% - 3rem, var(--wrap));}
   .inv-grid{grid-template-columns:1fr;gap:2.6rem;}
-  /* photo and every one of its decorations are centred together */
+  /* photo and every one of its decorations are centred together.
+     The wrapper is capped at 520px, so gutters may be wider than
+     the page gutter on a small screen — that is fine, it is what
+     keeps the photo optically centred. */
   .inv-photo-wrap{order:-1;width:auto;max-width:min(520px,100%);margin-inline:auto;}
-  /* the glow that hangs outside the photo would widen the page here */
+  /* the halo now lives inside the photo box, so it is fine here;
+     only the outer rose glow has to go */
+  .inv-photo-wrap::before{inset:10px;}
   .inv-photo-wrap::after{display:none;}
   .gb-grid{grid-template-columns:1fr;}
   .chapter-inner{grid-template-columns:1fr;gap:1.8rem;}
@@ -554,7 +588,9 @@ footer .f-small{font-size:.62rem;color:rgba(245,235,221,.46);letter-spacing:.12e
   .dress-rules li > span{text-align:left;}
   .palette{justify-content:center;}
   .dress-card{text-align:center;}
-  .chapter-inner{width:100%;}
+  /* NOTE: no width:100% here. The chapter bands stay full-bleed and
+     .chapter-inner keeps the gutters, so the copy lines up with
+     every other section on the page. */
 }
 
 @media (max-width:780px){
@@ -569,7 +605,9 @@ footer .f-small{font-size:.62rem;color:rgba(245,235,221,.46);letter-spacing:.12e
   /* the schedule card stacks and its text lines up under the time */
   .sched-card{flex-direction:column;align-items:center;gap:.6rem;text-align:center;}
   .sched-time{min-width:0;}
-  .sched-card > span:last-child{text-align:center;}
+  /* the third child is a plain span wrapping two block spans; without
+     width:100% it stays at its natural width and the note hangs left */
+  .sched-card > span:last-child{width:100%;max-width:34ch;margin-inline:auto;text-align:center;}
   .sched-list{padding-left:2.6rem;}
   .intro-inner{padding:1.4rem;}
   .palette{gap:.7rem;}
@@ -581,11 +619,17 @@ footer .f-small{font-size:.62rem;color:rgba(245,235,221,.46);letter-spacing:.12e
   .btn{padding:1rem 1.6rem;letter-spacing:.2em;font-size:.7rem;}
   .success{padding:1.4rem 1.1rem;}
   .success .tick{width:62px;height:62px;}
+  /* keep the inner wrapper's gutters in step with .wrap */
+  .chapter-inner{width:min(100% - 2.2rem, var(--wrap));}
+  /* scale the leaf ornaments down so they sit inside the section */
+  .leaf-a{width:120px;height:120px;left:-10px;}
+  .leaf-b{width:140px;height:140px;right:-10px;}
 }
 
 /* ---- very small phones ---- */
 @media (max-width:420px){
   .wrap{width:min(100% - 1.7rem, var(--wrap));}
+  .chapter-inner{width:min(100% - 1.7rem, var(--wrap));}
   .cd-cell{padding:1rem .3rem;}
   .cd-num{font-size:2rem;}
   .swatch{width:62px;}
@@ -594,6 +638,8 @@ footer .f-small{font-size:.62rem;color:rgba(245,235,221,.46);letter-spacing:.12e
   .sched-list{padding-left:2.1rem;}
   .sched-list::before{left:5px;}
   .sched-dot{left:-14px;}
+  .leaf-a{width:96px;height:96px;left:-6px;}
+  .leaf-b{width:112px;height:112px;right:-6px;}
   #totop{right:.9rem;bottom:.9rem;width:42px;height:42px;}
   .skip-intro{right:.9rem;bottom:1rem;}
 }
