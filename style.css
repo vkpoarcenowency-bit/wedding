@@ -215,6 +215,8 @@ h2.title{
 .inv-actions{display:flex;flex-wrap:wrap;gap:.8rem;}
 .inv-photo-wrap{position:relative;}
 .inv-photo-wrap::before{content:"";position:absolute;inset:-14px;border:1px solid rgba(198,164,106,.55);border-radius:8px;pointer-events:none;}
+/* the glow sits outside the photo, so it is hidden on narrow screens
+   where it would push the layout off-centre */
 .inv-photo-wrap::after{content:"";position:absolute;inset:-30px -30px auto auto;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,rgba(199,125,135,.35),transparent 68%);pointer-events:none;}
 
 /* ============================================================
@@ -237,9 +239,11 @@ h2.title{
    ============================================================ */
 #story{background:var(--cream);color:var(--espresso);padding-bottom:0;}
 .story-list{margin-top:clamp(2.5rem,6vw,4.5rem);}
-.chapter{position:relative;padding:clamp(2.4rem,5vw,3.8rem) 1.2rem;}
+.chapter{position:relative;padding:clamp(2.4rem,5vw,3.8rem) 0;background:var(--cream);}
 .chapter.alt{background:var(--blush);}
-.chapter-inner{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.6rem,5vw,4rem);align-items:center;width:min(100% - 1.4rem,var(--wrap));margin-inline:auto;}
+/* the inner wrapper carries the page gutters, so the rose/cream bands
+   reach the screen edges and the content inside stays centred */
+.chapter-inner{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.6rem,5vw,4rem);align-items:center;width:min(100% - 3.4rem,var(--wrap));margin-inline:auto;}
 .chapter-num{font-family:var(--serif);font-size:.9rem;letter-spacing:.34em;color:var(--mauve);text-transform:uppercase;}
 .chapter.alt .chapter-num{color:var(--rose);}
 .chapter h3{font-family:var(--serif);font-weight:500;font-size:clamp(1.6rem,3vw,2.15rem);color:var(--plum);margin:.7rem 0 .35rem;line-height:1.2;}
@@ -476,12 +480,45 @@ footer .f-small{font-size:.62rem;color:rgba(245,235,221,.46);letter-spacing:.12e
 #totop svg{width:18px;height:18px;}
 
 /* ============================================================
+   BACKGROUND MUSIC TOGGLE
+   ============================================================ */
+#music-toggle{
+  position:fixed;right:1.3rem;bottom:5.1rem;z-index:80;
+  width:46px;height:46px;border-radius:50%;display:grid;place-items:center;
+  color:var(--cream);background:rgba(73,43,58,.9);
+  border:1px solid rgba(198,164,106,.6);
+  transition:background-color .4s ease,transform .4s var(--ease),opacity .4s ease;
+}
+#music-toggle:hover{background:var(--rose);transform:translateY(-2px);}
+#music-toggle svg{width:19px;height:19px;}
+#music-toggle .m-muted{display:none;}
+#music-toggle.is-muted .m-playing{display:none;}
+#music-toggle.is-muted .m-muted{display:block;}
+#music-toggle:not(.is-muted) .m-playing{animation:musicPulse 2.6s ease-in-out infinite;}
+@keyframes musicPulse{
+  0%,100%{transform:scale(1);opacity:1;}
+  50%{transform:scale(1.12);opacity:.82;}
+}
+#music-toggle.is-unavailable{opacity:.45;cursor:not-allowed;}
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
-@media (max-width:1080px){ .travel-grid{grid-template-columns:1fr 1fr;} }
+/* ---- tablet: 1180px and below ---- */
+@media (max-width:1180px){
+  .wrap{width:min(100% - 3.4rem, var(--wrap));}
+}
+
+/* ---- small tablet / large phone: stack the two-column blocks ---- */
 @media (max-width:1000px){
+  .wrap{width:min(100% - 3rem, var(--wrap));}
   .inv-grid{grid-template-columns:1fr;gap:2.6rem;}
-  .inv-photo-wrap{order:-1;max-width:540px;margin-inline:auto;}
+  /* photo and every one of its decorations are centred together */
+  .inv-photo-wrap{order:-1;width:100%;max-width:520px;margin-inline:auto;}
   .gb-grid{grid-template-columns:1fr;}
   .chapter-inner{grid-template-columns:1fr;gap:1.8rem;}
   .chapter.flip .chapter-body{order:0;}
@@ -492,21 +529,62 @@ footer .f-small{font-size:.62rem;color:rgba(245,235,221,.46);letter-spacing:.12e
   .gal-item.wide .frame{--ratio:64%;}
   .gal-cap{opacity:1;transform:none;}
 }
+
+/* ---- phone: full single-column, everything centred ---- */
 @media (max-width:900px){
   .navlinks{display:none;}
   .burger{display:flex;}
+  .travel-grid{grid-template-columns:1fr 1fr;}
+  .dress-grid,.card-grid{grid-template-columns:1fr;}
+
+  /* the two-column blocks that were left aligned to the edge */
+  .inv-copy,.chapter-body,.dress-grid > div,.gb-grid > div{text-align:center;}
+  .inv-copy .lede,.dress-grid .lede{max-width:60ch;margin-inline:auto;}
+  .inv-actions{justify-content:center;}
+  .dress-rules li{text-align:left;}
+  .dress-rules li > span{text-align:left;}
+  .palette{justify-content:center;}
+  .dress-card{text-align:center;}
+  .chapter-inner{width:100%;}
 }
-@media (max-width:860px){
-  .dress-grid,.card-grid,.travel-grid{grid-template-columns:1fr;}
+
+@media (max-width:780px){
+  .travel-grid{grid-template-columns:1fr;}
 }
+
 @media (max-width:660px){
+  .wrap{width:min(100% - 2.2rem, var(--wrap));}
+  section{padding:clamp(3.4rem,11vw,5rem) 0;}
   .cd-grid{grid-template-columns:repeat(2,1fr);gap:.8rem;}
   .f-row{grid-template-columns:1fr;}
-  .sched-card{flex-direction:column;align-items:flex-start;gap:.55rem;}
+  /* the schedule card stacks and its text lines up under the time */
+  .sched-card{flex-direction:column;align-items:center;gap:.6rem;text-align:center;}
   .sched-time{min-width:0;}
+  .sched-card > span:last-child{text-align:center;}
+  .sched-list{padding-left:2.6rem;}
   .intro-inner{padding:1.4rem;}
   .palette{gap:.7rem;}
   .swatch{width:74px;}
   .swatch i{height:74px;}
   .inv-actions .btn{width:100%;}
+  .intro-line{font-size:clamp(3rem,15vw,5rem);}
+  .dress-rules li{font-size:.86rem;}
+  .btn{padding:1rem 1.6rem;letter-spacing:.2em;font-size:.7rem;}
+  .success{padding:1.4rem 1.1rem;}
+  .success .tick{width:62px;height:62px;}
+}
+
+/* ---- very small phones ---- */
+@media (max-width:420px){
+  .wrap{width:min(100% - 1.7rem, var(--wrap));}
+  .cd-cell{padding:1rem .3rem;}
+  .cd-num{font-size:2rem;}
+  .swatch{width:62px;}
+  .swatch i{height:62px;}
+  .gal-cap{padding:1.2rem .8rem .7rem;font-size:.86rem;}
+  .sched-list{padding-left:2.1rem;}
+  .sched-list::before{left:5px;}
+  .sched-dot{left:-14px;}
+  #totop{right:.9rem;bottom:.9rem;width:42px;height:42px;}
+  .skip-intro{right:.9rem;bottom:1rem;}
 }
